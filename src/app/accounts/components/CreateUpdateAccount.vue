@@ -64,8 +64,9 @@ export default {
 
   methods: {
     ...mapActions([
-      'addAccount',
-      'updateAccount'
+      'createAccount',
+      'updateAccount',
+      'loadAccounts'
     ]),
 
     resetAndGo () {
@@ -74,7 +75,7 @@ export default {
     },
 
     saveNewAccount () {
-      this.addAccount(this.selectedAccount).then(() => {
+      this.createAccount(this.selectedAccount).then(() => {
         this.resetAndGo();
       });
     },

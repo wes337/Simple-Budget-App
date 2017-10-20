@@ -20,7 +20,7 @@ export const saveAccount = (account) => {
   });
 };
 
-export const removeAccount = (account) => {
+export const deleteAccount = (account) => {
   return localforage.removeItem(
     ACCOUNT_NAMESPACE + account.id
   ).then(() => {
