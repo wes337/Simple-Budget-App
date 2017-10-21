@@ -3,8 +3,8 @@ import * as components from './components';
 export default [
   {
     path: '/',
-    component: components.AccountsListView,
-    name: 'accountsListView'
+    component: components.AccountsList,
+    name: 'accountsList'
   },
   {
     path: '/accounts/create',
@@ -14,6 +14,7 @@ export default [
   {
     path: '/accounts/:accountId/update',
     component: components.CreateUpdateAccount,
-    name: 'updateAccount'
+    name: 'updateAccount',
+    props: true
   }
 ];
