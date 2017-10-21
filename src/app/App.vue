@@ -2,7 +2,7 @@
   <div id="app">
     <div class="columns app-container">
       <div class="column is-3 sidebar">
-        <span class="brand"><img src="../assets/logo.png">udgeterbium</span>
+        <span class="brand"><img src="../assets/logo.png">Wes Budget App</span>
         <navigation></navigation>
       </div>
       <div class="column">
