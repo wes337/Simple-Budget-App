@@ -2,7 +2,7 @@
   <div id="app">
     <div class="columns app-container">
       <div class="column is-3 sidebar">
-        <span class="brand"><img src="../assets/logo.png">Wes Budget App</span>
+        <span class="brand"><img src="../assets/logo.png">udgeterbium</span>
         <navigation></navigation>
       </div>
       <div class="column">
@@ -54,7 +54,7 @@ export default {
     background-color: #02212B;
 
     .brand {
-      font-size: 36px;
+      font-size: 24px;
       color: #ffffff;
       margin: 40px 0 20px 20px;
       vertical-align: top;
