@@ -1,13 +1,13 @@
 <template>
-  <div id="budgets-list-view">
+  <div id="budgets-list">
     I'm a list of budgets!
 
     <router-link :to="{ name: 'createBudget' }">Add a budget</router-link>
-    <router-link :to="{ name: 'accountsListView' }">View accounts</router-link>
+    <router-link :to="{ name: 'accountsList' }">View accounts</router-link>
 
     <ul>
-      <li v-for="budget, key in budgets">
-        {{ budget.month }}
+      <li v-for="budget in sortedBudgets">
+        {{ budget.month | moment }}
         ${{ budget.budgeted }}
         ${{ budget.spent }}
         ${{ budget.income }}
@@ -20,8 +20,14 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 
+import { moment } from '../../../filters';
+
 export default {
   name: 'budgets-list',
+
+  filters: {
+    moment
+  },
 
   mounted () {
     this.loadBudgets();
@@ -36,7 +42,17 @@ export default {
   computed: {
     ...mapState({
       'budgets': state => state.budgets.budgets
-    })
+    }),
+
+    sortedBudgets () {
+      let sortedKeys = Object.keys(this.budgets).sort((a, b) => {
+        return this.budgets[b].month - this.budgets[a].month;
+      });
+
+      return sortedKeys.map((key) => {
+        return this.budgets[key];
+      });
+    }
   }
 };
 </script>
