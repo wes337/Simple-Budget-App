@@ -28,3 +28,8 @@ export const loadAccounts = (store) => {
     });
   }
 };
+
+export const updateAccountBalance = ({ commit, getters }, data) => {
+  commit('UPDATE_ACCOUNT_BALANCE', data);
+  saveAccount(getters.getAccountById(data.account.id));
+};

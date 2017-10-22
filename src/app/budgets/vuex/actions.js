@@ -152,3 +152,15 @@ export const updateBudgetCategory = ({ commit, dispatch, getters }, data) => {
   // save using the budget in our store
   saveBudget(getters.getBudgetById(data.budget.id));
 };
+
+export const updateBudgetCategorySpent = ({ commit, dispatch, getters }, data) => {
+  commit('UPDATE_BUDGET_CATEGORY_BALANCE', { budget: data.budget, value: data.amount, budgetCategory: data.budgetCategory, param: 'spent' });
+
+  dispatch('updateBudgetBalance', {
+    budget: data.budget,
+    param: 'spent',
+    value: data.budget.spent + data.amount
+  });
+
+  saveBudget(getters.getBudgetById(data.budget.id));
+};
