@@ -1,7 +1,8 @@
 # wesbudgetapp
 
 > A simple budgeting app made with Vue.js
-> You can see a live demo [here](http://wesbudget.azurewebsites.net) deployed through Microsoft Azure's cloud services.
+
+You can see a live demo [here](http://wesbudget.azurewebsites.net) deployed through Microsoft Azure's cloud services.
 
 ## Build Setup
 
